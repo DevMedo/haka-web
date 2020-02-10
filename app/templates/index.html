@@ -1,0 +1,467 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <title>حكواتي</title>
+  <style>
+    html,
+    body {
+      padding: 0px;
+      margin: 0px;
+      background-image: url("{% static 'assets/background.png' %}");
+    }
+
+    @font-face {
+      font-family: FrutigerLTArabic-Light;
+      src: url("{% static 'assets/FrutigerLTArabic-Light.ttf' %}");
+    }
+
+    @font-face {
+      font-family: FrutigerLTArabic-Bold;
+      src: url("{% static 'assets/FrutigerLTArabic-Bold.ttf' %}");
+    }
+
+    @font-face {
+      font-family: FrutigerLTArabic-Roman;
+      src: url("{%static 'assets/FrutigerLTArabic-Roman.ttf' %}");
+    }
+
+    @font-face {
+      font-family: OpenSans-Bold;
+      src: url("{% static 'assets/OpenSans-Bold.ttf' %}");
+    }
+
+    @font-face {
+      font-family: Raleway-Bold;
+      src: url("{% static 'assets/Raleway-Bold.ttf' %}");
+    }
+
+    .banner {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+
+    .hero {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .hero-img {
+      padding: 0px;
+      margin: 0px;
+      width: 100%;
+      height: 100vh;
+
+      position: relative;
+      top: 0px;
+    }
+
+    .nav-logo {
+      right: 0px;
+    }
+
+    nav {
+      position: absolute !important;
+      background-color: rgba(255, 255, 255, .2);
+      z-index: 3;
+      direction: rtl;
+      width: 100%;
+    }
+
+    #hakawati-app {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      width: 35%;
+      margin-left: 5em;
+      margin-top: 10em;
+    }
+
+    #video-title {
+      font-family: FrutigerLTArabic-Bold;
+      text-align: center;
+      margin-top: 100px;
+      color: white;
+      font-size: 3.5em;
+    }
+
+    #video-logo {
+      width: 100px;
+      margin-left: 50px;
+    }
+
+    .video-container {
+      background-color: rgba(255, 255, 255, .4);
+      height: 730px;
+      width: 80%;
+      border-radius: 16px;
+      border: 0px;
+      padding: 0px;
+      margin: 0px;
+      -webkit-box-shadow: 10px 12px 36px -20px rgba(61, 61, 61, 0.45);
+      -moz-box-shadow: 10px 12px 36px -20px rgba(61, 61, 61, 0.45);
+      box-shadow: 10px 12px 36px -20px rgba(61, 61, 61, 0.45);
+      margin: 0 auto;
+    }
+
+    video {
+      border-radius: 16px;
+      width: 100%;
+      height: 100%;
+    }
+
+    .hero-content {
+      font-family: FrutigerLTArabic-Roman;
+      font-size: 26px;
+      color: white;
+      position: absolute;
+      top: 8em;
+      right: 1.6em;
+      width: 530px;
+      direction: rtl !important;
+      text-align: right;
+    }
+
+    #hakawati {
+      width: 20rem;
+    }
+
+    #nav-logo {
+      width: 35px;
+      margin-right: 10px
+    }
+
+    #g2a a {
+      border-radius: 30px;
+      background-color: white;
+      color: #EF4D4D;
+      font-family: FrutigerLTArabic-Bold;
+      width: 260px;
+      height: 60px;
+      text-align: center;
+      display: table-cell;
+      vertical-align: middle;
+      position: relative;
+      top: 80px;
+    }
+
+    .nav-item a {
+      font-family: FrutigerLTArabic-Roman;
+      font-size: 28px;
+      color: white;
+      margin-right: 100px;
+      margin-left: 30px;
+      margin-top: 10px;
+    }
+
+    select.dd {
+      width: 100%;
+      border: transparent;
+      height: 40px;
+      border-radius: 10px;
+      margin: 8px 0 25px 0;
+      background: white url("{% static 'assets/arrow' %}") 5px 12px no-repeat;
+    }
+
+    #footer-background {
+      width: 100%;
+      position: absolute;
+    }
+
+    .footer-heading {
+      font-size: 66px;
+      text-align: center;
+      color: white;
+      font-family: FrutigerLTArabic-Bold;
+    }
+
+    .footer-content {
+      text-align: center;
+      font-size: 30px;
+      font-family: FrutigerLTArabic-Roman;
+      color: white;
+    }
+
+    .footer-social {
+      text-align: center;
+      font-size: 50px;
+      font-family: FrutigerLTArabic-Roman;
+      color: white;
+    }
+
+
+
+    .card {
+      background-color: rgb(265, 265, 265, 0.8);
+      border-radius: 15px;
+      width: 100%;
+      height: 700px;
+      border: 0px;
+      padding: 20px 46px;
+      position: absolute;
+      margin: 30px;
+
+    }
+
+    .card .label {
+      font-size: 20px;
+      color: #717171;
+      text-align: right;
+      font-family: FrutigerLTArabic-Roman;
+      font-size: 26px;
+    }
+
+    .card input,
+    .card select {
+      width: 100%;
+      border: transparent;
+      height: 40px;
+      border-radius: 10px;
+      margin: 8px 0 25px 0;
+    }
+
+    .button-contact {
+      align-items: center;
+      background-color: #3a6ff5;
+      color: white;
+      padding: 10px 15px;
+      margin: 0 auto;
+      border-radius: 30px;
+      margin-top: 20px;
+      padding: 0 auto;
+      text-align: center;
+      width: 70%;
+      font-family: FrutigerLTArabic-Bold;
+      font-size: 25px;
+    }
+
+    select {
+      -moz-appearance: none;
+      /* Firefox */
+      -webkit-appearance: none;
+      /* Safari and Chrome */
+      appearance: none;
+      /* background: url(assets/arr.png) no-repeat right ; */
+      background-color: white;
+
+    }
+
+    .logo-header {
+      background: url("{% static 'assets/logo-head.png' %}") no-repeat bottom;
+      background-size: cover;
+      background-position: center center;
+      width: 96px;
+      height: 96px;
+      margin: 0 auto;
+    }
+
+    .twitter {
+      background: url("{% static 'assets/twit.png' %}") no-repeat bottom;
+      background-size: cover;
+      background-position: center center;
+      width: 96px;
+      height: 96px;
+      margin: 0 auto;
+    }
+
+    .insta {
+      background: url("{% static 'assets/insta.png' %}") no-repeat bottom;
+      background-size: cover;
+      background-position: center center;
+      width: 96px;
+      height: 96px;
+      margin: 0 auto;
+    }
+
+    .left-side {
+      width: 40%;
+      position: absolute;
+      top: 220px;
+      color: white;
+      float: left;
+      align-content: center;
+    }
+
+    .left-side h2 {
+      font-weight: bolder;
+      font-size: 50px;
+    }
+
+    .social {
+      width: 200px;
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      margin-left: 31.5%;
+    }
+
+
+    footer {
+      position: relative;
+      background: url("{% static 'assets/footer-background.png' %}") no-repeat;
+      background-size: cover;
+      bottom: 0px;
+      width: 100%;
+      height: 300px;
+    }
+
+    .twitter {
+      background: url("{% static 'assets/twit.png' %}") no-repeat bottom;
+      background-size: cover;
+      background-position: center center;
+      width: 96px;
+      height: 96px;
+      margin: 0 auto;
+    }
+
+    .insta {
+      background: url("{% static 'assets/insta.png' %}") no-repeat bottom;
+      background-size: cover;
+      background-position: center center;
+      width: 96px;
+      height: 96px;
+      margin: 0 auto;
+    }
+
+    .footer {
+      margin-top: 200px;
+      height: 800px;
+      background-image: url("{% static 'assets/footer-background.png' %}");
+      background-position-y: bottom;
+      background-size: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand"><img src="{% static 'assets/logo.svg' %}" id="nav-logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+
+          <li class="nav-item active">
+            <a class="nav-link" href="#">البرنامج<span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link" href="#">سجل معنا<span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link" href="#">تواصل معنا<span class="sr-only">(current)</span></a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <section>
+    <div class="hero"><img src="{% static 'assets/banner.png' %}" class="hero-img">
+      <img id="hakawati-app" src="{% static 'assets/hakawati-app.png' %}"></div>
+    <div class="hero-content">
+      <img src="{% static 'assets/hakawati.png' %}" id="hakawati">
+      <p>
+        حكواتي هو التطبيق الأمتع لتحسين تجربة القراءة مع الأطفال، اطلق العنان لخيالهم واجعلهم يقضون امتع الأوقات في
+        التعلم
+        والاستمتاع بالقصة والمحتوى
+      </p>
+
+
+      <div id="g2a"><a href="">سجل معنا</a></div>
+
+    </div>
+  </section>
+  <section>
+    <h1 id="video-title">خذ نظرة على برنامجنا <img src="{% static 'assets/video-logo.png' %}" id="video-logo"></h1>
+
+    <div class="col-lg-8 col-12 video-container">
+      <video controls>
+        <source src="{% static 'assets/hakawati-video.mp4' %}" type="video/mp4">
+      </video>
+    </div>
+
+    </div>
+  </section>
+
+  <section class="footer">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="footer-text">
+            <p class="footer-heading">سجل معنا الآن</p>
+            <p class="footer-content">
+              لمنحك التجربة الأفضل يرجى تعبئة الاستبيان المقابل وسيصلك إشعار حينما يكون التطبيق جاهزاً
+            </p>
+            <p class="footer-heading">تابعنا على</p>
+            <h1 class="text-center">
+              <div class="social">
+                <div onclick="location.href='https://twitter.com/hakawatiar/';" style="cursor: pointer;"
+                  class="twitter">
+                </div>
+                <div onclick="location.href='https://www.instagram.com/hakawatiar/';" style="cursor: pointer;"
+                  class="insta"></div>
+              </div>
+            </h1>
+            <h3 class="footer-content">@HakawatiAR</h3>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card card-homepage">
+            
+            <div class="logo-header"></div>
+            <div class="label">الإسم</div>
+            <form method="post">
+              {% csrf_token %}
+            {{ form.name }}
+            <div class="label">الإيميل</div>
+            {{ form.email }}
+            <div class="label">إختار الباقة</div>
+            {{ form.plan }}
+            <div style="text-align: center;">
+            <button type="submit" class="button-contact">
+              إشترك الآن
+            </button>
+          </div>
+
+          </form>
+        
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
