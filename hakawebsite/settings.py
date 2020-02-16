@@ -119,4 +119,4 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/yf54ney0kvy4/public_html/haka-web/app/static'
+STATIC_ROOT = '/home/yf54ney0kvy4/public_html/static'
