@@ -79,6 +79,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'hakadatabase',
+        'HOST': 'hakawatistudios.com'
     }
 }
 
