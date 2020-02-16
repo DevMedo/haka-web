@@ -77,9 +77,10 @@ WSGI_APPLICATION = 'hakawebsite.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    "default": {
         "ENGINE": "django_s3_sqlite",
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        "NAME": "sqlite.db",
+        "BUCKET": "your-db-bucket",
     }
 }
 
