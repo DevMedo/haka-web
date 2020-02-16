@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'hakawatistudios.com', ]
 # Application definition
 
 INSTALLED_APPS = [
+    'django_s3_sqlite',
     'app',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -77,7 +78,7 @@ WSGI_APPLICATION = 'hakawebsite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        "ENGINE": "django_s3_sqlite",
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
