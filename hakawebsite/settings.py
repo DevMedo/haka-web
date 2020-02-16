@@ -25,7 +25,7 @@ SECRET_KEY = 'l(7(24gn51w!hs770%)-#zas3(@&4r$a9@ac_0%$h2sr5fhk@r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','hake123.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'hakawatistudios.com', ]
 
 
 # Application definition
@@ -51,7 +51,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'hakawebsite.urls'
-TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__) ,'templates').replace('\\','/'),)
+TEMPLATE_DIRS = (os.path.join(os.path.dirname(
+    __file__), 'templates').replace('\\', '/'),)
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -117,5 +118,5 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
 STATIC_URL = '/static/'
+STATIC_ROOT = '/home/yf54ney0kvy4/public_html/haka-web/app/static'
