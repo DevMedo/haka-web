@@ -77,11 +77,8 @@ WSGI_APPLICATION = 'hakawebsite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'hakadatabase',
-        'USER': 'yf54ney0kvy4',
-        'HOST': '160.153.132.207',
-        'PASSWORD': 'Abb_1111'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
