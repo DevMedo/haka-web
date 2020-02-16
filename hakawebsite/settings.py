@@ -77,8 +77,8 @@ WSGI_APPLICATION = 'hakawebsite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mydatabase',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'hakadatabase',
     }
 }
 
