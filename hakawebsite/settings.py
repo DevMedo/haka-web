@@ -79,8 +79,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'hakadatabase',
-        'USER': 'abb',
-        'HOST': 'hakawatistudios.com',
+        'USER': 'yf54ney0kvy4',
+        'HOST': '160.153.132.207',
         'PASSWORD': 'Abb_1111'
     }
 }
