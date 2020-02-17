@@ -1,11 +1,7 @@
-<html>
+{% extends "base.html" %}
+{% load static %}
 
-<head>
-</head>
-
-<body>
-    <h1>403
-    </h1>
-</body>
-
-</html>
+{% block content %}
+<h1 class="message">Error 403
+</h1>
+{% endblock content %}

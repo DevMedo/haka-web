@@ -1,137 +1,108 @@
+{% extends "base.html" %}
 {% load static %}
-<!doctype html>
-<html lang="en">
+{% block content %}
+<header>
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand"><img src="{% static 'assets/logo.svg' %}" id="nav-logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">البرنامج<span class="sr-only">(current)</span></a>
+        </li>
 
-  <title>حكواتي</title>
-  <link rel="stylesheet" href="{% static 'assets/style.css' %}">
-</head>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">سجل معنا<span class="sr-only">(current)</span></a>
+        </li>
 
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg">
-      <a class="navbar-brand"><img src="{% static 'assets/logo.svg' %}" id="nav-logo"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">تواصل معنا<span class="sr-only">(current)</span></a>
+        </li>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-
-          <li class="nav-item active">
-            <a class="nav-link" href="#">البرنامج<span class="sr-only">(current)</span></a>
-          </li>
-
-          <li class="nav-item active">
-            <a class="nav-link" href="#">سجل معنا<span class="sr-only">(current)</span></a>
-          </li>
-
-          <li class="nav-item active">
-            <a class="nav-link" href="#">تواصل معنا<span class="sr-only">(current)</span></a>
-          </li>
-
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <section>
-    <div class="hero"><img src="{% static 'assets/banner.png' %}" class="hero-img">
-      <img id="hakawati-app" src="{% static 'assets/hakawati-app.png' %}"></div>
-    <div class="hero-content">
-      <img src="{% static 'assets/hakawati.png' %}" id="hakawati">
-      <p>
-        حكواتي هو التطبيق الأمتع لتحسين تجربة القراءة مع الأطفال، اطلق العنان لخيالهم واجعلهم يقضون امتع الأوقات في
-        التعلم
-        والاستمتاع بالقصة والمحتوى
-      </p>
-
-
-      <div id="g2a"><a href="">سجل معنا</a></div>
-
+      </ul>
     </div>
-  </section>
-  <section>
-    <h1 id="video-title">خذ نظرة على برنامجنا <img src="{% static 'assets/video-logo.png' %}" id="video-logo"></h1>
+  </nav>
+</header>
+<section>
+  <div class="hero"><img src="{% static 'assets/banner.png' %}" class="hero-img">
+    <img id="hakawati-app" src="{% static 'assets/hakawati-app.png' %}"></div>
+  <div class="hero-content">
+    <img src="{% static 'assets/hakawati.png' %}" id="hakawati">
+    <p>
+      حكواتي هو التطبيق الأمتع لتحسين تجربة القراءة مع الأطفال، اطلق العنان لخيالهم واجعلهم يقضون امتع الأوقات في
+      التعلم
+      والاستمتاع بالقصة والمحتوى
+    </p>
 
-    <div class="col-lg-8 col-12 video-container">
-      <video controls>
-        <source src="{% static 'assets/hakawati-video.mp4' %}" type="video/mp4">
-      </video>
-    </div>
 
-    </div>
-  </section>
+    <div id="g2a"><a href="">سجل معنا</a></div>
 
-  <section class="footer">
+  </div>
+</section>
+<section>
+  <h1 id="video-title">خذ نظرة على برنامجنا <img src="{% static 'assets/video-logo.png' %}" id="video-logo"></h1>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="footer-text">
-            <p class="footer-heading">سجل معنا الآن</p>
-            <p class="footer-content">
-              لمنحك التجربة الأفضل يرجى تعبئة الاستبيان المقابل وسيصلك إشعار حينما يكون التطبيق جاهزاً
-            </p>
-            <p class="footer-heading">تابعنا على</p>
-            <h1 class="text-center">
-              <div class="social">
-                <div onclick="location.href='https://twitter.com/hakawatiar/';" style="cursor: pointer;"
-                  class="twitter">
-                </div>
-                <div onclick="location.href='https://www.instagram.com/hakawatiar/';" style="cursor: pointer;"
-                  class="insta"></div>
+  <div class="col-lg-8 col-12 video-container">
+    <video controls>
+      <source src="{% static 'assets/hakawati-video.mp4' type='video/mp4' %}">
+    </video>
+  </div>
+
+  </div>
+</section>
+
+<section class="footer">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="footer-text">
+          <p class="footer-heading">سجل معنا الآن</p>
+          <p class="footer-content">
+            لمنحك التجربة الأفضل يرجى تعبئة الاستبيان المقابل وسيصلك إشعار حينما يكون التطبيق جاهزاً
+          </p>
+          <p class="footer-heading">تابعنا على</p>
+          <h1 class="text-center">
+            <div class="social">
+              <div onclick="location.href='https://twitter.com/hakawatiar/';" style="cursor: pointer;" class="twitter">
               </div>
-            </h1>
-            <h3 class="footer-content">@HakawatiAR</h3>
-          </div>
+              <div onclick="location.href='https://www.instagram.com/hakawatiar/';" style="cursor: pointer;"
+                class="insta"></div>
+            </div>
+          </h1>
+          <h3 class="footer-content">@HakawatiAR</h3>
         </div>
-        <div class="col-lg-6">
-          <div class="card card-homepage">
-
-            <div class="logo-header"></div>
-            <div class="label">الإسم</div>
-            <form method="post">
-              {% csrf_token %}
-              {{ form.name }}
-              <div class="label">الإيميل</div>
-              {{ form.email }}
-              <div class="label">إختار الباقة</div>
-              {{ form.plan }}
-              <div style="text-align: center;">
-                <button type="submit" class="button-contact">
-                  إشترك الآن
-                </button>
-              </div>
-
-            </form>
-
-
-          </div>
-        </div>
-
       </div>
-    </div>
-  </section>
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
-</body>
+      <div class="col-lg-6">
+        <div class="card card-homepage">
 
-</html>
+          <div class="logo-header"></div>
+          <div class="label">الإسم</div>
+          <form method="post">
+            {% csrf_token %}
+            {{ form.name }}
+            <div class="label">الإيميل</div>
+            {{ form.email }}
+            <div class="label">إختار الباقة</div>
+            {{ form.plan }}
+            <div style="text-align: center;">
+              <button type="submit" class="button-contact">
+                إشترك الآن
+              </button>
+            </div>
+
+          </form>
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}
