@@ -327,3 +327,11 @@ footer {
   direction: rtl;
   padding-right: 10px;
 }
+
+.message {
+  font-family: Raleway-Bold;
+  color: white;
+  font-size: 64px;
+  text-align: center;
+  margin: auto;
+}
