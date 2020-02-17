@@ -25,7 +25,7 @@ SECRET_KEY = 'l(7(24gn51w!hs770%)-#zas3(@&4r$a9@ac_0%$h2sr5fhk@r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'hakawatistudios.com', ]
+ALLOWED_HOSTS = ['127.0.0.1', 'hakawatistudios.com', 'www.hakawatistudios.com']
 
 
 # Application definition
