@@ -1,108 +1,98 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<header>
-  <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand"><img src="{% static 'assets/logo.svg' %}" id="nav-logo"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-
-        <li class="nav-item active">
-          <a class="nav-link" href="#">البرنامج<span class="sr-only">(current)</span></a>
-        </li>
-
-        <li class="nav-item active">
-          <a class="nav-link" href="#">سجل معنا<span class="sr-only">(current)</span></a>
-        </li>
-
-        <li class="nav-item active">
-          <a class="nav-link" href="#">تواصل معنا<span class="sr-only">(current)</span></a>
-        </li>
-
-      </ul>
+<!-- hero Section -->
+<div class="header main_page hero">
+  <div class="container-fluid">
+    <div class="row  justify-content-around align-items-center">
+      <div class="col-md-4 col-sm-6 text-right">
+        <img src="{% static 'assets/hakawati.png' %}" class="img-fluid" alt="">
+        <p class="pt-3 herocontent">حكواتي هو التطبيق الأمتع لتحسين تجربة القراءة مع الأطفال، اطلق العنان لخيالهم
+          واجعلهم
+          يقضون امتع
+          الأوقات في
+          التعلم
+          والاستمتاع بالقصة والمحتوى
+        </p>
+        <a href="" id="hero-btn" class="btn btn-primary btn-lg"> سجل معنا</a>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <img src="{% static 'assets/hakawati-app.png' %}" style="width: 350px;height: 100%;" class="img-fluid" alt="">
+      </div>
     </div>
-  </nav>
-</header>
-<section>
-  <div class="hero"><img src="{% static 'assets/banner.png' %}" class="hero-img">
-    <img id="hakawati-app" src="{% static 'assets/hakawati-app.png' %}"></div>
-  <div class="hero-content">
-    <img src="{% static 'assets/hakawati.png' %}" id="hakawati">
-    <p>
-      حكواتي هو التطبيق الأمتع لتحسين تجربة القراءة مع الأطفال، اطلق العنان لخيالهم واجعلهم يقضون امتع الأوقات في
-      التعلم
-      والاستمتاع بالقصة والمحتوى
-    </p>
-
-
-    <div id="g2a"><a href="">سجل معنا</a></div>
-
   </div>
-</section>
-<section>
-  <h1 id="video-title">خذ نظرة على برنامجنا <img src="{% static 'assets/video-logo.png' %}" id="video-logo"></h1>
-
-  <div class="col-lg-8 col-12 video-container">
-    <video controls>
-      <source src="{% static 'assets/hakawati-video.mp4' type='video/mp4' %}">
-    </video>
-  </div>
-
-  </div>
-</section>
-
-<section class="footer">
-
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
-        <div class="footer-text">
-          <p class="footer-heading">سجل معنا الآن</p>
-          <p class="footer-content">
-            لمنحك التجربة الأفضل يرجى تعبئة الاستبيان المقابل وسيصلك إشعار حينما يكون التطبيق جاهزاً
-          </p>
-          <p class="footer-heading">تابعنا على</p>
-          <h1 class="text-center">
-            <div class="social">
-              <div onclick="location.href='https://twitter.com/hakawatiar/';" style="cursor: pointer;" class="twitter">
-              </div>
-              <div onclick="location.href='https://www.instagram.com/hakawatiar/';" style="cursor: pointer;"
-                class="insta"></div>
-            </div>
-          </h1>
-          <h3 class="footer-content">@HakawatiAR</h3>
+</div>
+<!-- Take a look Section -->
+<div class="container-fluid padding mt-5">
+  <div class="row text-center ">
+    <div class="col-12">
+      <div class="col-12">
+        <h2 class="display-5" id="video-title"><img src="{% static 'assets/video-logo.png' %}" class="img-fluid"
+            id="video-logo" style="width: auto; height: 80px;" alt="">
+          القي نظرة على حكواتي </h2>
+        <div class="video-container mt-5">
+          <video controls>
+            <source src="{% static 'assets/hakawati-video.mp4' %}" type="video/mp4">
+          </video>
         </div>
       </div>
-      <div class="col-lg-6">
-        <div class="card card-homepage">
 
-          <div class="logo-header"></div>
-          <div class="label">الإسم</div>
-          <form method="post">
-            {% csrf_token %}
-            {{ form.name }}
-            <div class="label">الإيميل</div>
-            {{ form.email }}
+    </div>
+  </div>
+</div>
+
+<!-- sign up Section -->
+<div class="container-fluid pt-5" id="sign-up">
+  <div class="row">
+    <div class="col-md-12 col-lg-6 mt-5">
+      <div class="card">
+        <div class="logo-header"></div>
+        <form action="sendemail.php">
+          <div class="form-group">
+            <div class="label">الإسم</div>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <div class="label">البريد الالكتروني</div>
+            <input type="email" class="form-control">
+          </div>
+          <div class="form-group">
             <div class="label">إختار الباقة</div>
-            {{ form.plan }}
-            <div style="text-align: center;">
-              <button type="submit" class="button-contact">
-                إشترك الآن
-              </button>
-            </div>
-
-          </form>
-
-
-        </div>
+            <select id="inputState" class="form-control">
+              <option selected>إختار...</option>
+              <option>الباقة الذهبية </option>
+              <option>الباقة الفضية </option>
+              <option>الباقة البرونزية </option>
+            </select>
+          </div>
+          <div class="form-group text-center">
+            <button class="btn mb-2" id="sign-up-btn">إشترك الأن</button>
+          </div>
+        </form>
       </div>
-
     </div>
+    <div class="col-md-12 col-lg-6 text-center  order-2">
+      <div class="sign-text">
+        <h3 class="display-3">سجل معنا الآن</h3>
+        <hr>
+        <p class="lead pt-2">
+          لمنحك التجربة الأفضل يرجى تعبئة الاستبيان المقابل<br> وسيصلك إشعار حينما يكون التطبيق جاهزاً
+        </p>
+        <p> <strong> تابعنا على </strong>
+        </p>
+        <div class="sign-social d-flex justify-content-center">
+          <div onclick="location.href='https://www.instagram.com/hakawatiar/';" style="cursor: pointer;" class="insta">
+          </div>
+
+          <div onclick="location.href='https://twitter.com/hakawatiar/';" style="cursor: pointer;" class="twitter">
+          </div>
+        </div>
+        <h3 class="sign-content">@HakawatiAR</h3>
+
+      </div>
+    </div>
+
   </div>
-</section>
+
+</div>
 {% endblock %}

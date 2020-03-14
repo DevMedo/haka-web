@@ -1,10 +1,3 @@
-html,
-body {
-  padding: 0px;
-  margin: 0px;
-  background-image: url("background.png");
-}
-
 @font-face {
   font-family: FrutigerLTArabic-Light;
   src: url("FrutigerLTArabic-Light.ttf");
@@ -29,76 +22,141 @@ body {
   font-family: Raleway-Bold;
   src: url("Raleway-Bold.ttf");
 }
-
-.banner {
-  width: 100%;
-  height: 100%;
-  position: absolute;
+/* Arabic */
+* {
+  direction: rtl;
 }
 
-.hero {
-  width: 100%;
+body {
+  padding: 0px;
+  margin: 0px;
   height: 100%;
+  width: 100%;
+  background-image: url("background.png");
+  color: #fff;
+  font-family: FrutigerLTArabic-Bold;
+}
+html {
+  padding: 0px;
+  margin: 0px;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+a {
+  color: #fff;
+}
+
+/*
+Extra small devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+*/
+
+/*
+Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  ...;
+}
+*/
+
+/*
+Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  ...;
+}
+*/
+
+/*
+Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  ...;
+}
+/*
+
+/* Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  ...;
+}
+*/
+
+@media only screen and (max-width: 1199px) {
+}
+
+.overflow {
   overflow: hidden;
 }
 
-.hero-img {
-  padding: 0px;
-  margin: 0px;
-  width: 100%;
-  height: 100vh;
-
-  position: relative;
-  top: 0px;
+.uppercase {
+  text-transform: uppercase;
 }
 
-.nav-logo {
-  right: 0px;
-}
-
-nav {
-  position: absolute !important;
-  background-color: rgba(255, 255, 255, 0.2);
-  z-index: 3;
-  direction: rtl;
-  width: 100%;
-}
-
-#hakawati-app {
+/*************************
+*******hero******
+**************************/
+#mainNav {
   position: absolute;
-  z-index: 2;
-  top: 0;
+  width: 100%;
+}
+.hero {
+  background-image: url("phone-back.svg");
+  background-repeat: no-repeat;
+  /* Sizing */
+  padding-top: 5rem;
+}
+.overlay {
+  position: absolute;
   left: 0;
-  width: 35%;
-  margin-left: 5em;
-  margin-top: 10em;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+#hero-btn {
+  border-radius: 20px 20px 20px 20px;
+  width: 50%;
+  background-color: white;
+  color: #fe6967;
+  border: none;
+  /* Remove borders */
+  outline: none;
+  /* Remove outline */
+  transition: all 0.4s ease-in-out;
 }
 
+#hero-btn:hover {
+  background-color: #fe6967;
+  color: white;
+}
+
+.herocontent {
+  font-family: FrutigerLTArabic-Bold;
+}
+
+#nav-logo {
+  width: 42px;
+  margin-right: 10px;
+}
+nav#mainNav a:not(.navbar-brand) {
+  color: white;
+  font-size: 22px;
+  width: 220px;
+}
 #video-title {
   font-family: FrutigerLTArabic-Bold;
-  text-align: center;
-  margin-top: 100px;
-  color: white;
-  font-size: 3.5em;
 }
 
 #video-logo {
   width: 100px;
-  margin-left: 50px;
 }
 
 .video-container {
   background-color: rgba(255, 255, 255, 0.4);
-  height: 730px;
-  width: 80%;
   border-radius: 16px;
   border: 0px;
-  padding: 0px;
-  margin: 0px;
-  -webkit-box-shadow: 10px 12px 36px -20px rgba(61, 61, 61, 0.45);
-  -moz-box-shadow: 10px 12px 36px -20px rgba(61, 61, 61, 0.45);
-  box-shadow: 10px 12px 36px -20px rgba(61, 61, 61, 0.45);
+  padding: 10px;
   margin: 0 auto;
+  width: 50%;
+  -moz-box-shadow: 0 0 5px 3px #9d9d9d;
+  -webkit-box-shadow: 0 0 3px 5px #9d9d9d;
+  box-shadow: 0 0 15px 3px #9d9d9d;
 }
 
 video {
@@ -107,93 +165,19 @@ video {
   height: 100%;
 }
 
-.hero-content {
-  font-family: FrutigerLTArabic-Roman;
-  font-size: 26px;
-  color: white;
-  position: absolute;
-  top: 8em;
-  right: 1.6em;
-  width: 530px;
-  direction: rtl !important;
-  text-align: right;
-}
-
-#hakawati {
-  width: 20rem;
-}
-
-#nav-logo {
-  width: 35px;
-  margin-right: 10px;
-}
-
-#g2a a {
-  border-radius: 30px;
-  background-color: white;
-  color: #ef4d4d;
-  font-family: FrutigerLTArabic-Bold;
-  width: 260px;
-  height: 60px;
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle;
-  position: relative;
-  top: 80px;
-}
-
-.nav-item a {
-  font-family: FrutigerLTArabic-Roman;
-  font-size: 28px;
-  color: white;
-  margin-right: 100px;
-  margin-left: 30px;
-  margin-top: 10px;
-}
-
-select.dd {
-  width: 100%;
-  border: transparent;
-  height: 40px;
-  border-radius: 10px;
-  margin: 8px 0 25px 0;
-  background: white url("arrow") 5px 12px no-repeat;
-}
-
-#footer-background {
-  width: 100%;
-  position: absolute;
-}
-
-.footer-heading {
-  font-size: 66px;
-  text-align: center;
-  color: white;
-  font-family: FrutigerLTArabic-Bold;
-}
-
-.footer-content {
-  text-align: center;
-  font-size: 30px;
-  font-family: FrutigerLTArabic-Roman;
-  color: white;
-}
-
-.footer-social {
-  text-align: center;
-  font-size: 50px;
-  font-family: FrutigerLTArabic-Roman;
-  color: white;
+.logo-header {
+  background: url("logo-head.png") no-repeat bottom;
+  background-size: cover;
+  background-position: center center;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto;
 }
 
 .card {
   background-color: rgb(265, 265, 265, 0.8);
   border-radius: 15px;
-  width: 100%;
-  height: 700px;
-  border: 0px;
   padding: 20px 46px;
-  position: absolute;
   margin: 30px;
 }
 
@@ -217,7 +201,6 @@ select.dd {
 .button-contact {
   align-items: center;
   background-color: #3a6ff5;
-  color: white;
   padding: 10px 15px;
   margin: 0 auto;
   border-radius: 30px;
@@ -229,157 +212,163 @@ select.dd {
   font-size: 25px;
 }
 
-select {
-  -moz-appearance: none;
-  /* Firefox */
-  -webkit-appearance: none;
-  /* Safari and Chrome */
-  appearance: none;
-  /* background: url(arr.png) no-repeat right ; */
-  background-color: white;
+#sign-up {
+  margin-top: 40px;
 }
 
-.logo-header {
-  background: url("logo-head.png") no-repeat bottom;
-  background-size: cover;
-  background-position: center center;
-  width: 96px;
-  height: 96px;
-  margin: 0 auto;
-}
-
-.twitter {
-  background: url("twit.png") no-repeat bottom;
-  background-size: cover;
-  background-position: center center;
-  width: 96px;
-  height: 96px;
-  margin: 0 auto;
-}
-
-.insta {
-  background: url("insta.png") no-repeat bottom;
-  background-size: cover;
-  background-position: center center;
-  width: 96px;
-  height: 96px;
-  margin: 0 auto;
-}
-
-.left-side {
-  width: 40%;
-  position: absolute;
-  top: 220px;
+#sign-up-btn {
+  align-items: center;
+  border-radius: 20px;
+  padding: 10px 5px;
+  margin: 10px 5px;
+  outline: none;
   color: white;
-  float: left;
-  align-content: center;
+  background-color: #3a6ff5;
+  width: 50%;
+  font-family: FrutigerLTArabic-Bold;
+  transition: all 0.4s ease-in-out;
+}
+#sign-up-btn:hover {
+  color: #3a6ff5;
+  background-color: white;
+  border: 1px solid #3a6ff5;
 }
 
-.left-side h2 {
-  font-weight: bolder;
+.sign-text {
+  margin-top: 42px;
+  bottom: 0px;
+}
+.sign-social {
   font-size: 50px;
-}
-
-.social {
-  width: 200px;
+  font-family: FrutigerLTArabic-Roman;
   display: flex;
+  width: 100%;
   justify-content: space-between;
   text-align: center;
   margin-left: 31.5%;
 }
 
-footer {
+.twitter {
+  background: url("twit.png") no-repeat bottom;
+  background-size: cover;
+  width: 96px;
+  height: 96px;
+}
+
+.insta {
+  background: url("insta.png") no-repeat bottom;
+  background-size: cover;
+  width: 96px;
+  height: 96px;
+}
+
+/* 
+.hawakty {
   position: relative;
   background: url("footer-background.png") no-repeat;
   background-size: cover;
   bottom: 0px;
   width: 100%;
   height: 300px;
+} */
+/* Footer heart */
+.sign-content {
+  direction: ltr;
+}
+#footer {
+  margin-top: 30px;
+  z-index: -1;
+  position: relative;
+  width: 100%;
+  bottom: 0px;
 }
 
-.twitter {
-  background: url("twit.png") no-repeat bottom;
-  background-size: cover;
-  background-position: center center;
-  width: 96px;
-  height: 96px;
-  margin: 0 auto;
-}
-
-.insta {
-  background: url("insta.png") no-repeat bottom;
-  background-size: cover;
-  background-position: center center;
-  width: 96px;
-  height: 96px;
-  margin: 0 auto;
-}
-
-.footer {
-  margin-top: 200px;
-  height: 800px;
-  background-image: url("footer-background.png");
-  background-position-y: bottom;
-  background-size: cover;
-}
-
-#id_plan {
-  direction: rtl;
-  padding-right: 10px;
-}
-
-.message {
-  font-family: Raleway-Bold;
-  color: white;
-  font-size: 64px;
-  text-align: center;
-  margin: auto;
-}
-
-.spinner-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ff6347;
-  z-index: 999999;
-}
-
-.spinner {
-  width: 40px;
-  height: 40px;
-  background-color: #333;
+#footer .fo-img {
   position: absolute;
-  top: 48%;
-  left: 48%;
-  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
-  animation: sk-rotateplane 1.2s infinite ease-in-out;
+  left: 0;
+  bottom: -27px;
 }
 
-@-webkit-keyframes sk-rotateplane {
-  0% {
-    -webkit-transform: perspective(120px);
-  }
-  50% {
-    -webkit-transform: perspective(120px) rotateY(180deg);
-  }
-  100% {
-    -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg);
+#footer span {
+  color: #fff;
+  font-size: 12px;
+  display: block;
+  position: absolute;
+  bottom: 10px;
+  position: absolute;
+  width: 90%;
+  left: 50%;
+  top: 45%;
+  bottom: auto;
+  right: auto;
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+}
+
+span a {
+  text-decoration: none;
+}
+
+span .fa {
+  color: #e90606;
+  margin: 0 3px;
+  font-size: 10px;
+  animation: pound 0.35s infinite alternate;
+  -webkit-animation: pound 0.35s infinite alternate;
+}
+
+@-webkit-keyframes pound {
+  to {
+    transform: scale(1.1);
   }
 }
 
-@keyframes sk-rotateplane {
-  0% {
-    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-  }
-  50% {
-    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-  }
-  100% {
-    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+@keyframes pound {
+  to {
+    transform: scale(1.5);
   }
 }
+
+#myBtn {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Fixed/sticky position */
+  bottom: 20px;
+  /* Place the button at the bottom of the page */
+  right: 30px;
+  /* Place the button 30px from the right */
+  z-index: 99;
+  /* Make sure it does not overlap */
+  border: none;
+  /* Remove borders */
+  outline: none;
+  /* Remove outline */
+  background-color: red;
+  /* Set a background color */
+  cursor: pointer;
+  /* Add a mouse pointer on hover */
+  border-radius: 50%;
+  /* Rounded corners */
+  font-size: 18px;
+  /* Increase font size */
+
+  color: #fff;
+  box-shadow: rgba(255, 255, 255, 0.2) 2px;
+
+  transition: all 0.4s ease-in-out;
+}
+
+#myBtn:hover {
+  outline: none;
+  /* Remove outline */
+  background-color: white;
+  /* Set a background color */
+  color: red;
+  /* Text color */
+}
+
+/* footer background */
