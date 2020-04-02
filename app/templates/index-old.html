@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-
-
 <!-- hero Section -->
 <div class="header main_page hero">
   <div class="container-fluid">
@@ -18,9 +16,8 @@
         </p>
         <a href="" id="hero-btn" class="btn btn-primary btn-lg"> سجل معنا</a>
       </div>
-      <div class="col-md-6 col-sm-6">
-        <img src="{% static 'assets/hakawati-app.png' %}" style="width: 53%;position: relative;right: 20px;"
-          class="img-fluid hakawati-app" alt="">
+      <div class="col-md-4 col-sm-6">
+        <img src="{% static 'assets/hakawati-app.png' %}" style="width: 350px;height: 100%;" class="img-fluid" alt="">
       </div>
     </div>
   </div>
@@ -39,18 +36,18 @@
           </video>
         </div>
       </div>
+
     </div>
   </div>
 </div>
 
 <!-- sign up Section -->
-<div class="container pt-5" id="sign-up">
-  <!--
+<div class="container-fluid pt-5" id="sign-up">
   <div class="row">
     <div class="col-md-12 col-lg-6 mt-5">
       <div class="card">
         <div class="logo-header"></div>
-        <form>
+        <form action="sendemail.php">
           <div class="form-group">
             <div class="label">الإسم</div>
             <input type="text" class="form-control">
@@ -59,13 +56,21 @@
             <div class="label">البريد الالكتروني</div>
             <input type="email" class="form-control">
           </div>
+          <div class="form-group">
+            <div class="label">إختار الباقة</div>
+            <select id="inputState" class="form-control">
+              <option selected>إختار...</option>
+              <option>الباقة الذهبية </option>
+              <option>الباقة الفضية </option>
+              <option>الباقة البرونزية </option>
+            </select>
+          </div>
           <div class="form-group text-center">
             <button class="btn mb-2" id="sign-up-btn">إشترك الأن</button>
           </div>
         </form>
       </div>
     </div>
-
     <div class="col-md-12 col-lg-6 text-center  order-2">
       <div class="sign-text">
         <h3 class="display-3">سجل معنا الآن</h3>
@@ -88,52 +93,6 @@
     </div>
 
   </div>
--->
 
-  <div class="row">
-    <div class="col-12">
-      <div class="box-container">
-        <div class="box-img"><img src="{% static 'assets/Sondos.png' %}"></div>
-        <div class="box-body">
-          <div class="box-su">
-            <div class="logo-header"></div>
-            <div class="row box-su-form">
-              <div class="fgf text-center col-md-12">
-                <input type="text" class="form-control" placeholder="الإسم">
-
-              </div>
-              <div class="fgf text-center col-md-12">
-                <div class="">
-                  <input type="email" class="form-control" placeholder="الإيميل الإلكتروني">
-                </div>
-              </div>
-              <div class="fgf text-center col-md-12">
-                <button class="btn mb-2" id="sign-up-btn">إشترك الأن</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-12 col-lg-12 text-center followus">
-      <div class="sign-text">
-        <p class="lead pt-2">
-          لمنحك التجربة الأفضل يرجى تعبئة البيانات وسيصلك إشعار حينما يكون التطبيق جاهزاً
-        </p>
-        <p>
-          <h1> تابعنا على </h1>
-        </p>
-        <div class="sign-social d-flex justify-content-center">
-          <div onclick="location.href='https://www.instagram.com/hakawatiar/';" style="cursor: pointer;" class="insta">
-          </div>
-
-          <div onclick="location.href='https://twitter.com/hakawatiar/';" style="cursor: pointer;" class="twitter">
-          </div>
-        </div>
-        <h3 class="sign-content">@HakawatiAR</h3>
-
-      </div>
-    </div>
-  </div>
 </div>
 {% endblock %}

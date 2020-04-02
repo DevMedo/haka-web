@@ -7,6 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>حكواتي</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/favicon-16x16.png' %}">
+  <link rel="manifest" href="{% static 'assets/site.webmanifest' %}">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="{% static 'assets/style.css' %}">
@@ -19,6 +23,7 @@
 </head>
 
 <body>
+  <div class="pattern pattern-animate-symbols pattern-animate"></div>
   <!--CSS Spinner-->
   <div class="spinner-wrapper">
     <div class="spinner"></div>
@@ -67,9 +72,9 @@
         <img src="{% static 'assets/hakawati.png' %}" class="img-fluid" alt="" style="width: auto; height: 60px;">
       </div>
       <div class="col-12">
-        <p> <span>صنع <i class="fa fa-heart pulse"></i> في المملكة العربية السعودية
-          </span><br>
-        </p>
+        <span>صنع <i class="fa fa-heart pulse"></i> في المملكة العربية السعودية
+        </span><br>
+
       </div>
     </div>
   </footer>

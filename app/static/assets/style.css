@@ -26,16 +26,6 @@
 * {
   direction: rtl;
 }
-
-body {
-  padding: 0px;
-  margin: 0px;
-  height: 100%;
-  width: 100%;
-  background-image: url("background.png");
-  color: #fff;
-  font-family: FrutigerLTArabic-Bold;
-}
 html {
   padding: 0px;
   margin: 0px;
@@ -45,38 +35,57 @@ html {
 a {
   color: #fff;
 }
-
-/*
-Extra small devices (portrait phones, less than 576px)
-No media query since this is the default in Bootstrap
-*/
-
-/*
-Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  ...;
+body {
+  padding: 0px;
+  margin: 0px;
+  color: #fff;
+  background-color: #ffbf02;
+  font-family: FrutigerLTArabic-Bold;
+  overflow-x: hidden;
+  position: relative;
+  text-align: center;
 }
-*/
 
-/*
-Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  ...;
-}
-*/
+/* pattern_animation */
 
-/*
-Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  ...;
+.pattern-animate {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-repeat: repeat;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
 }
-/*
+.pattern-animate::before {
+  content: "";
+  left: 0;
+  position: absolute;
+  top: 0;
+}
 
-/* Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  ...;
+.pattern-animate-symbols::before {
+  animation: pattern_animation 60s ease-out 0s infinite forwards;
+  background: url("pattern.svg");
+  -webkit-background-size: 800px;
+  -moz-background-size: 800px;
+  -o-background-size: 800px;
+  background-size: 800px;
+  background-repeat: repeat;
+  height: calc(200%);
+  width: calc(200%);
+  opacity: 0.15;
 }
-*/
+@keyframes pattern_animation {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(-420px, -420px);
+  }
+}
 
 @media only screen and (max-width: 1199px) {
 }
@@ -89,9 +98,6 @@ Large devices (desktops, 992px and up)
   text-transform: uppercase;
 }
 
-/*************************
-*******hero******
-**************************/
 #mainNav {
   position: absolute;
   width: 100%;
@@ -99,8 +105,7 @@ Large devices (desktops, 992px and up)
 .hero {
   background-image: url("phone-back.svg");
   background-repeat: no-repeat;
-  /* Sizing */
-  padding-top: 5rem;
+  padding-top: 9rem;
 }
 .overlay {
   position: absolute;
@@ -118,16 +123,19 @@ Large devices (desktops, 992px and up)
   /* Remove borders */
   outline: none;
   /* Remove outline */
+  font-size: 22px;
   transition: all 0.4s ease-in-out;
 }
 
 #hero-btn:hover {
   background-color: #fe6967;
   color: white;
+  transform: scale(1.1);
 }
 
 .herocontent {
   font-family: FrutigerLTArabic-Bold;
+  font-size: 26px;
 }
 
 #nav-logo {
@@ -138,7 +146,18 @@ nav#mainNav a:not(.navbar-brand) {
   color: white;
   font-size: 22px;
   width: 220px;
+  border-radius: 22px;
+  margin: 17px;
+  transition: all 0.6s;
+  text-align: center;
 }
+
+a.nav-link:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.2);
+  color: red;
+}
+
 #video-title {
   font-family: FrutigerLTArabic-Bold;
 }
@@ -224,11 +243,12 @@ video {
   outline: none;
   color: white;
   background-color: #3a6ff5;
-  width: 50%;
+  width: 95%;
   font-family: FrutigerLTArabic-Bold;
   transition: all 0.4s ease-in-out;
 }
 #sign-up-btn:hover {
+  transform: scale(1.1);
   color: #3a6ff5;
   background-color: white;
   border: 1px solid #3a6ff5;
@@ -261,7 +281,42 @@ video {
   width: 96px;
   height: 96px;
 }
+.susec {
+  padding-top: 200px;
+}
+.box-body {
+  width: 75%;
+  margin: 0px auto;
+  height: 300px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.6);
+}
+.box-container {
+  padding-top: 100px;
+  height: 400px;
+  position: relative;
+}
+.box-img img {
+  height: 600px;
+  position: absolute;
+  bottom: -80px;
+  left: 53px;
+}
 
+.box-su {
+  width: 80%;
+  padding-top: 10px;
+}
+.box-su-form {
+  width: 60%;
+  margin: 0 auto;
+}
+.fgf {
+  padding-bottom: 15px;
+}
+.fgf:first-of-type {
+  padding-top: 10px;
+}
 /* 
 .hawakty {
   position: relative;
@@ -286,7 +341,7 @@ video {
 #footer .fo-img {
   position: absolute;
   left: 0;
-  bottom: -27px;
+  bottom: 0;
 }
 
 #footer span {
@@ -347,7 +402,7 @@ span .fa {
   /* Remove borders */
   outline: none;
   /* Remove outline */
-  background-color: red;
+  background-color: #fe6a67;
   /* Set a background color */
   cursor: pointer;
   /* Add a mouse pointer on hover */
@@ -355,10 +410,8 @@ span .fa {
   /* Rounded corners */
   font-size: 18px;
   /* Increase font size */
-
   color: #fff;
   box-shadow: rgba(255, 255, 255, 0.2) 2px;
-
   transition: all 0.4s ease-in-out;
 }
 
@@ -367,8 +420,78 @@ span .fa {
   /* Remove outline */
   background-color: white;
   /* Set a background color */
-  color: red;
+  color: #fe6a67;
   /* Text color */
 }
 
 /* footer background */
+.followus {
+  margin-bottom: 200px;
+}
+
+@media only screen and (max-width: 768px) {
+  html,
+  body {
+    padding: 0px;
+    margin: 0px;
+    color: #fff;
+    background-color: #ffbf02;
+    font-family: FrutigerLTArabic-Bold;
+    position: relative;
+    text-align: center;
+    overflow-x: hidden;
+    width: 100vw;
+  }
+
+  .hakawati-app {
+    display: none;
+  }
+  #hero-btn {
+    font-size: 20px;
+    margin: 30px auto;
+    width: 70%;
+    display: block;
+  }
+  .herocontent {
+    font-size: 18px;
+    text-align: center;
+  }
+  .video-container {
+    width: 100%;
+  }
+  .box-su-form {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .box-img img {
+    height: 280px;
+    position: absolute;
+    bottom: 15px;
+    left: -50px;
+  }
+  #video-title {
+    font-size: 22px;
+  }
+  .pattern-animate {
+    z-index: 0;
+  }
+  .box-container {
+    padding-top: 10px;
+    height: auto;
+  }
+  #footer {
+    margin-top: 0px;
+    z-index: 0;
+    position: relative;
+    width: 100%;
+    bottom: 0px;
+  }
+  .followus {
+    margin-bottom: 50px;
+  }
+  .navbar-toggler {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+}

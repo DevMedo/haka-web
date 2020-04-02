@@ -15,16 +15,10 @@ def home(request):
             r.user = request.user
             name = form.cleaned_data.get('name')
             email = form.cleaned_data.get('email')
-            plan = form.cleaned_data.get('plan')
-
-            cr = contactRequest(name=name, email=email, plan=plan)
+            cr = contactRequest(name=name, email=email)
             cr.save()
-            print("name:"+cr.name)
-            print("email :", cr.email)
-            print("plan:", cr.plan)
             data = {'name': cr.name,
-                    'email': cr.email,
-                    'plan': cr.plan}
+                    'email': cr.email}
             return render(request, template_name="thankyou.html", context={'data': data})
     else:
         form = contactForm()
