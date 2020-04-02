@@ -300,7 +300,7 @@ video {
   height: 600px;
   position: absolute;
   bottom: -80px;
-  left: 53px;
+  left: 45px;
 }
 
 .box-su {
@@ -467,7 +467,7 @@ span .fa {
     height: 280px;
     position: absolute;
     bottom: 15px;
-    left: -50px;
+    left: -45px;
   }
   #video-title {
     font-size: 22px;
